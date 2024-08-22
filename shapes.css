@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
+html {
+  height: 200vh;
+  background: radial-gradient(ellipse at center, #db7800 0%, #507dcc 50%);
+  cursor: pointer;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  border-bottom: 15vh #546338 solid;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100 /* Set a high z-index */
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 0vh;
+  transform: translate(0, 100vh);
+  animation: move 1s 2.5s forwards;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 100vh);
+  }
+  100% {
+    transform: translate(0vh, 0);
+  }
+}
+
+.dandelion {
+  width: 80vmin;
+  height: 80vmin;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 1%);
+
+  &__leaf--left {
+    width: 0%;
+    height: 20%;
+    border-radius: 0% 50% 0% 50%;
+    position: absolute;
+    background: lighten(#556d39, 10%);
+    top: 70%;
+    left: 45%;
+    transform: translate(-100%, -50%) rotate(-20deg);
+    animation: dandelion__leaf forwards 1s 0.5s;
+  }
+
+  &__leaf--right {
+    @extend .dandelion__leaf--left;
+    top: 80%;
+    left: 55%;
+    transform: translate(0%, -50%) rotate(-70deg);
+  }
+
+  @keyframes dandelion__leaf {
+    0% {
+      width: 0%;
+      border: 0px solid black;
+    }
+    100% {
+      width: 20%;
+      border: 2px solid black;
+    }
+  }
+
+  &__stem {
+    position: absolute;
+    transform: translate(-50%, 0%);
+    width: 5%;
+    height: 60%;
+    background: #556d39;
+    left: 50%;
+    bottom: 0%;
+    border: 2px solid black;
+    animation: dandelion__stem forwards 1s;
+  }
+
+  @keyframes dandelion__stem {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 60%;
+    }
+  }
+
+  &__center {
+    border-radius: 50%;
+    background-color: #ecb404; /* Darker yellow */
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border: 3px solid #e4a409;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    z-index: 2;
+    animation: dandelion__center 1s 1s forwards;
+  }
+
+  @keyframes dandelion__center {
+    0% {
+      width: 0%;
+      height: 0%;
+    }
+    100% {
+      width: 8%; /* Smaller center */
+      height: 8%;
+    }
+  }
+
+  /* Large Petals */
+  &__lpetal--1 {
+    border-radius: 38%;
+    background: #edd30c; /* Bright yellow */
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    animation: grow-lpetal-back 1s 1.5s forwards;
+  }
+
+  &__lpetal--2 {
+    @extend .dandelion__lpetal--1;
+    transform: translate(-50%, -50%) rotate(40deg);
+  }
+
+  &__lpetal--3 {
+    @extend .dandelion__lpetal--1;
+    transform: translate(-50%, -50%) rotate(80deg);
+  }
+  &__lpetal--4 {
+    @extend .dandelion__lpetal--1;
+    transform: translate(-50%, -50%) rotate(120deg);
+  }
+  &__lpetal--5 {
+    @extend .dandelion__lpetal--1;
+    transform: translate(-50%, -50%) rotate(160deg);
+  }
+  &__lpetal--6 {
+    @extend .dandelion__lpetal--1;
+    transform: translate(-50%, -50%) rotate(200deg);
+  }
+  &__lpetal--7 {
+    @extend .dandelion__lpetal--1;
+    transform: translate(-50%, -50%) rotate(240deg);
+  }
+  &__lpetal--8 {
+    @extend .dandelion__lpetal--1;
+    transform: translate(-50%, -50%) rotate(280deg);
+  }
+  &__lpetal--9 {
+    @extend .dandelion__lpetal--1;
+    transform: translate(-50%, -50%) rotate(320deg);
+  }
+
+  @keyframes grow-lpetal-back {
+    0% {
+      width: 0%;
+      height: 0%;
+      border: 0px solid black;
+    }
+    100% {
+      width: 6%;/* Longer and thinner petals */
+      height: 40%;
+      border: 2px solid black;
+    }
+  }
+
+  /* Small Petals */
+  &__spetal--1 {
+    border-radius: 35%;
+    background: #fcc40a; /* Slightly different shade for contrast */
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    animation: grow-spetal-back 1s 1.5s forwards;
+  }
+
+  &__spetal--2 {
+    @extend .dandelion__spetal--1;
+    transform: translate(-50%, -50%) rotate(40deg);
+  }
+
+  &__spetal--3 {
+    @extend .dandelion__spetal--1;
+    transform: translate(-50%, -50%) rotate(80deg);
+  }
+  &__spetal--4 {
+    @extend .dandelion__spetal--1;
+    transform: translate(-50%, -50%) rotate(120deg);
+  }
+  &__spetal--5 {
+    @extend .dandelion__spetal--1;
+    transform: translate(-50%, -50%) rotate(160deg);
+  }
+  &__spetal--6 {
+    @extend .dandelion__spetal--1;
+    transform: translate(-50%, -50%) rotate(200deg);
+  }
+  &__spetal--7 {
+    @extend .dandelion__spetal--1;
+    transform: translate(-50%, -50%) rotate(240deg);
+  }
+  &__spetal--8 {
+    @extend .dandelion__spetal--1;
+    transform: translate(-50%, -50%) rotate(280deg);
+  }
+  &__spetal--9 {
+    @extend .dandelion__spetal--1;
+    transform: translate(-50%, -50%) rotate(320deg);
+  }
+
+  @keyframes grow-spetal-back {
+    0% {
+      width: 0%;
+      height: 0%;
+      border: 0px solid black;
+    }
+    100% {
+      width: 2.5%; /* Smaller petals */
+      height: 20%;
+      border: 2px solid black;
+    }
+  }
+}
